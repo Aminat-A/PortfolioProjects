@@ -47,6 +47,14 @@ SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100
  GROUP BY location, population
  ORDER by PercentPopulationInfected DESC;
  
+ SELECT location, population, date, MAX(total_cases)AS HighestInfectionCount, MAX(total_cases/population)*100 as PercentPopulationInfected
+ FROM `Portfolio Project`.coviddeaths 
+ -- WHERE location like '%canada%'
+ GROUP BY location, population, date
+ ORDER by PercentPopulationInfected DESC;
+ 
+
+ 
  -- Showing countries with the Highest Death Count Per Population
  
   SELECT location, MAX(total_deaths) AS TotalDeathCount
