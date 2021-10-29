@@ -27,6 +27,11 @@ SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100
  
 -- Total Cases vs Total Deaths in canada
 
+ SELECT location, date, total_cases, total_deaths
+ FROM `Portfolio Project`.coviddeaths 
+ WHERE location like '%canada%'
+ ORDER by 1,2;
+
  SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
  FROM `Portfolio Project`.coviddeaths 
  WHERE location like '%canada%'
